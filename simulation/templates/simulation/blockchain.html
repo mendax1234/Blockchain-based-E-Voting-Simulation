@@ -4,9 +4,9 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1>List of blocks</h1>
-    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">See all transactions</a>
-    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Back to homepage</a>
+    <h1>区块表</h1> <!--List of blocks-->>
+    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">产看所有交易 </a> <!--See all transactions-->
+    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">回到主页</a> <!--Back to homepage-->
     {% if messages %}
         {% for message in messages %}
             <div class="{{ message.extra_tags }} text-white">
@@ -18,11 +18,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Previous Hash</th>
-                <th scope="col">Block Hash</th>
-                <th scope="col">Merkle Root Hash</th>
-                <th scope="col">Nonce</th>
-                <th scope="col">Timestamp</th>
+                <th scope="col">前一区块的hash值</th> <!--Previous Hash-->
+                <th scope="col">当前区块的hash值</th> <!--Block Hash-->
+                <th scope="col">Merkle根的hash值</th> <!--Merkle Root Hash-->
+                <th scope="col">随机数</th>  <!--Nonce-->
+                <th scope="col">时间戳</th> <!--Timestamp-->
             </tr>
         </thead>
         <tbody>

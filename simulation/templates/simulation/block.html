@@ -5,48 +5,48 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1 class="pb-1">Block #{{ bk.id }}</h1>
-    <a class="btn btn-light btn-sm" href="{% url 'simulation:blockchain' %}" role="button">Back to blocks list</a>
-    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">Back to homepage</a>
+    <h1 class="pb-1">区块 #{{ bk.id }}</h1> <!--Block--> 
+    <a class="btn btn-light btn-sm" href="{% url 'simulation:blockchain' %}" role="button">回到区块表</a> <!--Back to blocks list-->
+    <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">回到主页</a><!--Back to homepage-->
     <div class="mt-1" style="padding: 3%; border: 1px solid black;">
         <dl class="row">
-            <dt class="col-sm-3">Previous hash</dt>
+            <dt class="col-sm-3">上一个区块的hash值</dt> <!--Previous hash-->
             <dd class="col-sm-9"><code>{{ bk.prev_h }}</code></dd>
 
-            <dt class="col-sm-3">Merkle root hash</dt>
+            <dt class="col-sm-3">Merkle根的hash值</dt> <!--Merkle root hash-->
             <dd class="col-sm-9"><code>{{ bk.merkle_h }}</code></dd>
 
-            <dt class="col-sm-3">Block hash</dt>
+            <dt class="col-sm-3">当前区块的hash值</dt> <!--Block hash-->
             <dd class="col-sm-9"><code>{{ bk.h }}</code></dd>
 
-            <dt class="col-sm-3">Nonce</dt>
+            <dt class="col-sm-3">随机数</dt> <!--Nonce-->
             <dd class="col-sm-9">{{ bk.nonce }}</dd>
 
-            <dt class="col-sm-3">Timestamp</dt>
+            <dt class="col-sm-3">时间戳</dt> <!--Timestamp-->
             <dd class="col-sm-9">{{ bk.timestamp|unix_to_date|date:"Y-m-d H:i:s" }} ({{ bk.timestamp|unix_to_date|timesince }} ago)</dd>
 
-            <dt class="col-sm-3">Confirmations</dt>
+            <dt class="col-sm-3">确认值</dt> <!--Confirmations-->
             <dd class="col-sm-9">{{ confirmed_by }} confirmations</dd>
         </dl>
     </div>
     <div class="p-2" id="block-navigation">
         {% if prev_block %}
-            <a class="btn btn-primary btn-sm" href="{% url 'simulation:block_detail' block_hash=prev_block.h %}" role="button">Previous block</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'simulation:block_detail' block_hash=prev_block.h %}" role="button">前一个区块</a> <!--Previous block-->
         {% endif %}
         {% if next_block %}
-            <a class="btn btn-primary btn-sm" href="{% url 'simulation:block_detail' block_hash=next_block.h %}" role="button">Next block</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'simulation:block_detail' block_hash=next_block.h %}" role="button">下一个区块</a> <!--Next block-->
         {% endif %}
     </div>
     <div>
-        <h2>Transactions</h2>
-        <p>Re-calculated merkle root hash: <code>{{ verified_merkle_h }}</code></p>
+        <h2>Transactions</h2> <!--Transactions-->
+        <p>Re-calculated merkle root hash: <code>{{ verified_merkle_h }}</code></p> <!--Re-calculated merkle root hash:-->
         {% if tampered %}
         <div class="bg-danger text-white">
             <p>Transactions are tampered <a class="btn btn-primary btn-sm" href="{% url 'simulation:sync_block' block_id=bk.id %}" role="button">Sync with other nodes</a></p>
-        </div>
+        </div><!--Transactions are tampered -- Sync with other nodes-->
         {% else %}
             <div class="bg-success text-white">
-                <p>Transactions are not tampered</p>
+                <p>Transactions are not tampered</p> <!--Transactions are not tampered-->
             </div>
         {% endif %}
 
