@@ -3,15 +3,15 @@
 
 {% block body_bl %}
 <div class="container">
-    <h1>List of unconfirmed votes</h1>
-    <p>Showing last 100 transactions (or all if &lt;=100)</p>
+    <h1>未被认证的投票记录</h1>
+    <p>最后100个投票纪录 (或者全部如果 &lt;=100)</p>
     
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Voter ID</th>
-                <th scope="col">Vote</th>
-                <th scope="col">Timestamp</th>
+                <th scope="col">投票者ID</th> <!--Voter ID-->
+                <th scope="col">所投票</th> <!--Vote-->
+                <th scope="col">时间戳</th> <!--Timestamp-->
             </tr>
         </thead>
         <tbody>
@@ -25,6 +25,6 @@
         </tbody>
     </table>
     
-    <a class="btn btn-primary btn-block" href="{% url 'simulation:seal' %}" role="button">Mine into blocks</a>
+    <a class="btn btn-primary btn-block" href="{% url 'simulation:seal' %}" role="button">把交易存到区块</a><!--Mine into blocks-->
 </div>
 {% endblock %}

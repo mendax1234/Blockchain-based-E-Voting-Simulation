@@ -5,37 +5,41 @@
 {% block body_bl %}
 <div class="container">
     <div>
-        <h1 style="padding-bottom:5%;">Blockchain-based e-voting simulation</h1>
+        <center><h1 style="padding-bottom:1%;">一种基于区块链技术的电子投票系统</h1></center> <!--Blockchain-based e-voting simulation-->
+        <h1 style = "padding-bottom: 1%;text-align: right;font-size: 20px;">华东师范大学第二附属中学（紫竹校区）  朱文博</h1>
     </div>
     <div class="row">
         <div class="col-md-5 menu">
-            <h2>"BLOCK"</h2>
-            <p>This part will show:</p>
+            <h2>区块</h2>  <!--"BLOCK"-->
+            <p>这部分将会展示：</p> <!--This part will show:-->
             <ul>
-                <li>Example of ballot</li>
-                <li>Ballot structure</li>
-                <li>Signature verification</li>
+                <li>投票的例子</li><!--Example of ballot-->
+                <li>投票的结构</li><!--Ballot structure-->
+                <li>签名认证</li><!--Signature verification-->
                 <li>Block sealing process</li>
             </ul>
             <div class="btn-menu">
-                <a class="btn btn-outline-primary btn-block btn-menu" href="{% url 'ballot:create' %}" role="button">Start</a>
+                <a class="btn btn-outline-primary btn-block btn-menu" href="{% url 'ballot:create' %}" role="button">开始</a>
             </div>
         </div>
         <div class="col-md-5 menu">
-            <h2>"CHAIN"</h2>
-            <p>This part will show:</p>
+            <h2>链</h2><!--"CHAIN"-->
+            <p>这部分将会展示：</p><!--This part will show:-->
             <ul>
-                <li>Batch transactions ({{ tx }})</li>
-                <li>Block chaining ({{ bl }})</li>
-                <li>Block detail</li>
-                <li>Blocks verification</li>
+                <li>交易数量 ({{ tx }})</li><!--Batch transactions-->
+                <li>区块数量 ({{ bl }})</li><!--Block chaining-->
+                <li>区块细节</li><!--Block detail-->
+                <li>区块认证</li><!--Blocks verification-->
             </ul>
             <div class="btn-menu">
-                <a class="btn btn-outline-primary btn-menu" href="{% url 'simulation:generate' %}" role="button">Start</a>
-                <a class="btn btn-link btn-menu" href="{% url 'simulation:transactions' %}" role="button">See transactions</a>
-                <a class="btn btn-link btn-menu" href="{% url 'simulation:blockchain' %}" role="button">See blocks</a>
+                <a class="btn btn-outline-primary btn-menu" href="{% url 'simulation:generate' %}" role="button">开始挖矿</a><!--Start-->
+                <a class="btn btn-link btn-menu" href="{% url 'simulation:transactions' %}" role="button">查看交易</a><!--See transactions-->
+                <a class="btn btn-link btn-menu" href="{% url 'simulation:blockchain' %}" role="button">查看区块</a><!--See blocks-->
             </div>
         </div>
+    </div>
+    <div>
+        <h1 style="text-align: right;font-size: 20px;padding-top: 1%;">上海交通大学网络空间安全实践工作站</h1>
     </div>
 </div>
 {% endblock %}

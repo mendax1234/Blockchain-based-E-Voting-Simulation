@@ -5,7 +5,7 @@
 {% block body_bl %}
 <div class="container">
     <h1>区块表</h1> <!--List of blocks-->>
-    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">产看所有交易 </a> <!--See all transactions-->
+    <a class="btn btn-light btn-sm" href="{% url 'simulation:transactions' %}" role="button">查看所有交易 </a> <!--See all transactions-->
     <a class="btn btn-light btn-sm" href="{% url 'welcome:home' %}" role="button">回到主页</a> <!--Back to homepage-->
     {% if messages %}
         {% for message in messages %}
@@ -36,11 +36,11 @@
                 <td>{{ block.timestamp|unix_to_date|date:"Y-m-d H:i:s" }}</td>
             </tr>
             {% empty %}
-                <p>No record.</p>
+                <p>暂无记录</p> <!--No record.-->
             {% endfor %}
         </tbody>
     </table>
-    <a class="btn btn-outline-primary btn-block" href="{% url 'simulation:verify' %}" role="button" title="Verify all transactions in each block">Verify</a>
-    <a class="btn btn-outline-primary btn-block" href="{% url 'simulation:sync' %}" role="button" title="Sync data with virtual nodes">Sync</a>
+    <a class="btn btn-outline-primary btn-block" href="{% url 'simulation:verify' %}" role="button" title="Verify all transactions in each block">认证</a>
+    <a class="btn btn-outline-primary btn-block" href="{% url 'simulation:sync' %}" role="button" title="Sync data with virtual nodes">同步</a>
 </div>
 {% endblock %}
